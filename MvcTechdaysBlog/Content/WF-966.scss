@@ -1,0 +1,55 @@
+﻿.container {
+    margin: 0 auto;
+    width: 966px;
+	overflow: hidden;
+}
+        
+.one, .one-half, .one-third, .two-third, .one-forth, .three-forth {
+    float:left;
+    margin-right: 30px;
+}
+        
+.one {
+    width: 966px;
+}
+        
+.one-half {
+    width: 468px;
+}
+        
+.one-third {
+    width: 302px;
+}
+        
+.two-third {
+    width: 634px;
+}
+        
+.one-forth {
+    width: 219px;
+}
+        
+.three-forth {
+    width: 717px;
+}
+        
+.last {
+	margin-right: 0;
+}    
+
+/* clearfix --------------------------------------------- */
+.container:after {
+    content: ".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+ 
+* html .container { /* IE6 */
+    height:1%; 
+}
+ 
+*:first-child+html .container { /* E7 */
+    height:1px;
+}
