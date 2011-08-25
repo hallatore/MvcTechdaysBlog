@@ -15,7 +15,7 @@ namespace MvcTechdaysBlog.Controllers
         }
         public ActionResult Error2()
         {
-            throw new NotImplementedError("hey ho... I'm not implemented yet!");
+            throw new ApplicationException("hey ho... you have some serious issues!");
         }
     }
 }

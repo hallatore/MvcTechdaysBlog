@@ -10,6 +10,14 @@ namespace MvcTechdaysBlog
         public override void OnException(ExceptionContext filterContext)
         {
             var exception = filterContext.Exception;
+            if (filterContext.Exception.GetType() ==  typeof(ArgumentException))
+            {
+                View = "Error2";
+            }
+            else
+            {
+                View = "Error";
+            }
             LogException(exception);
             base.OnException(filterContext);
         }
