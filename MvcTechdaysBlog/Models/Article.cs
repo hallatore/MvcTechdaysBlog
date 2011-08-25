@@ -27,6 +27,8 @@ namespace MvcTechdaysBlog.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
+        public Image Image { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

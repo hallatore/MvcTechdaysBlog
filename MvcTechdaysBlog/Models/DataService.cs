@@ -7,6 +7,11 @@ namespace MvcTechdaysBlog.Models
     {
         public DbSet<Article> Articles { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Image> Images { get; set; }
+
+        public DataService() : base("ConnectionString")
+        {
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
