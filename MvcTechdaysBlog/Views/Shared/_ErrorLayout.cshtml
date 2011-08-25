@@ -1,0 +1,15 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sorry, an error occurred while processing your request.</h2>
+@RenderBody()
+<p>
+    Controller: @Model.ControllerName<br />
+    Action: @Model.ActionName
+</p>
+<p>
+    Stacktrace: @Model.Exception
+</p>

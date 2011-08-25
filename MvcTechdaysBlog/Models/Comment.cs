@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace MvcTechdaysBlog.Models
 {
@@ -15,6 +16,7 @@ namespace MvcTechdaysBlog.Models
         [Required]
         [DataType(DataType.MultilineText)]
         [MaxLength(500)]
+        [Remote("BadWords", "Validation")]
         public string Content { get; set; }
 
         [Required]
