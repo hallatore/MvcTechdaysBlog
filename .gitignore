@@ -49,3 +49,6 @@ _FileCache/*
 .sass-cache/*
 
 *.sdf
+
+Uploads
+Uploads/*
