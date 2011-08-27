@@ -65,7 +65,7 @@ namespace MvcTechdaysBlog.Areas.Admin.Controllers
             image.MIME = image.HttpPostedFileBase.ContentType;
             var filePath = Server.MapPath(image.Url);
 
-            using (var fileStream = new FileStream(filePath, FileMode.Truncate))
+            using (var fileStream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
             {
                 image.HttpPostedFileBase.InputStream.CopyTo(fileStream);
             }
