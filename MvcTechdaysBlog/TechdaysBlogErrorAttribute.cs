@@ -19,7 +19,7 @@ namespace MvcTechdaysBlog
                 View = "Error";
             }
             LogException(exception);
-            base.OnException(filterContext);
+            base.OnException(filterContext);    
         }
 
         private void LogException(Exception exception)
@@ -32,7 +32,9 @@ namespace MvcTechdaysBlog
                 {
                     fileInfo.Directory.Create();
                 }
-                using (fileInfo.Create()) ;
+                using (fileInfo.Create())
+                {
+                }
             }
             using (var textWriter = fileInfo.AppendText())
             {

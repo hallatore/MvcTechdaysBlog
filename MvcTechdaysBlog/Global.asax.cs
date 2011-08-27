@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MvcTechdaysBlog.Models;
 
 namespace MvcTechdaysBlog
 {
@@ -33,9 +35,17 @@ namespace MvcTechdaysBlog
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+            Database.SetInitializer(new DataServiceInit());
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+    }
+
+    public class DataServiceInit : DropCreateDatabaseAlways<DataService>
+    {
+        protected override void Seed(DataService context)
+        {
+            base.Seed(context);
         }
     }
 }

@@ -14,6 +14,5 @@ namespace MvcTechdaysBlog.Models
         public string MIME { get; set; }
 
         public string Url { get; set; }
-        public string Url2 { get; set; }
     }
 }
