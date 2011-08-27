@@ -48,4 +48,4 @@ _FileCache/*
 .sass-cache
 .sass-cache/*
 
-.sdf
+*.sdf
