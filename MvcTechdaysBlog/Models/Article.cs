@@ -21,6 +21,7 @@ namespace MvcTechdaysBlog.Models
         public string Content { get; set; }
 
         [Required]
+        [Remote("UniqueUrlCheck", "Article")]
         public string Url { get; set; }
 
         [Required]
