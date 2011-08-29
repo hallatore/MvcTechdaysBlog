@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace MvcTechdaysBlog.Models
 {
-    public class Article
+    public class Article : IValidatableObject
     {
         [Key]
         public int Id { get; set; }
@@ -31,5 +31,12 @@ namespace MvcTechdaysBlog.Models
         public Image Image { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (Date.Date < DateTime.Now.Date)
+            {
+                yield return new ValidationResult("You can't publish yesterday");
+            }
+        }
     }
 }
