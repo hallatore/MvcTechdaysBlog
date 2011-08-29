@@ -17,6 +17,12 @@
         </div>
         <div class="one menu">
             Menu
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div id="logOffContainer">
+                    @Html.ActionLink("Log off " + User.Identity.Name, "LogOff", "Account")
+                </div>
+            }
         </div>
         <div class="one content">
             @RenderBody()
