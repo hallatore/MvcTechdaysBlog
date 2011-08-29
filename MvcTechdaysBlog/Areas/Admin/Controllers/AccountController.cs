@@ -20,7 +20,7 @@ namespace MvcTechdaysBlog.Areas.Admin.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Article");
             }
             return View();
         }
