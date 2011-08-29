@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using IronRuby.Builtins;
+using MvcTechdaysBlog.Filters;
 
 namespace MvcTechdaysBlog.Controllers
 {
+    [AllowAnonymous]
     public class ErrorController : Controller
     {
         public ActionResult Error1()

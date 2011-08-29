@@ -115,6 +115,8 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValidationController.cs" />
+    <Compile Include="Filters\AllowAnonymousAttribute.cs" />
+    <Compile Include="Filters\RequireAutheticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

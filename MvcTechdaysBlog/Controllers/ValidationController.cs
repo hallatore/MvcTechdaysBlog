@@ -1,9 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using System.Linq;
+using MvcTechdaysBlog.Filters;
 
 namespace MvcTechdaysBlog.Controllers
 {
+    [AllowAnonymous]
     public class ValidationController : Controller
     {
         public JsonResult BadWords(string content)

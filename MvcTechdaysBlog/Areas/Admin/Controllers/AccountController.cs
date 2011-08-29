@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using MvcTechdaysBlog.Areas.Admin.Models;
+using MvcTechdaysBlog.Filters;
 using MvcTechdaysBlog.Helpers;
 
 namespace MvcTechdaysBlog.Areas.Admin.Controllers
@@ -14,12 +15,18 @@ namespace MvcTechdaysBlog.Areas.Admin.Controllers
         //
         // GET: /Admin/Account/
 
+        [AllowAnonymous]
         public ActionResult LogOn()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult LogOn(LogOnViewModel model)
         {
             if (ModelState.IsValid && CheckCredentials(model))
