@@ -12,8 +12,6 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>LogOnViewModel</legend>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.UserName)
         </div>
@@ -31,11 +29,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Log on" class="fancy-button" />
         </p>
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

@@ -1,0 +1,56 @@
+﻿.fancy-text, input[type="text"], input[type="password"], textarea {
+    padding: 6px;
+    margin: 0;
+    border: solid 1px #E5E5E5;
+    outline: 0;
+    font-family: Verdana;
+    line-height: 1.5em;
+    font-size: 12px;
+    background: white url('Images/fancy-text.png') left top repeat-x;
+    background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #EEE), to(white));
+    background: -moz-linear-gradient(top, white, #EEE 1px, white 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+
+textarea.fancy-text, textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.fancy-button, input[type="button"], , input[type="submit"], button {
+    display: inline-block;
+    padding: 6px 20px;
+    margin: 0;
+    border: solid 1px #E5E5E5;
+    outline: 0;
+    font-family: Verdana;
+    color: #4E4E4E;
+    font-size: 12px;
+    cursor: pointer;
+    background: white url('Images/fancy-button.png') left top repeat-x;
+    background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(39%, #FFF), color-stop(70%, #EEE));
+    background: -moz-linear-gradient(top, white, white 1px, #eee 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+    
+    &:hover {
+        background: white url('Images/fancy-button-hover.png') left top repeat-x;
+        background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(39%, #FFF), color-stop(70%, #eaeaea));
+        background: -moz-linear-gradient(top, white, white 1px, #eaeaea 25px);
+        border: solid 1px #d5d5d5;
+    }
+}
+
+.fancy-div, .fancy-label {
+    display: inline-block;
+    font-family: Verdana;
+    color: #4E4E4E;
+    font-size: 12px;
+    cursor: pointer;
+}

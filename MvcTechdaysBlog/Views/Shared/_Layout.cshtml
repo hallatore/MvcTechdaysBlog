@@ -11,21 +11,29 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="one header">
-            <h1>Techdays Blog</h1>
-        </div>
-        <div class="one menu">
-            Menu
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div id="logOffContainer">
-                    @Html.ActionLink("Log off " + User.Identity.Name, "LogOff", "Account")
+        <div style="background-image: url(/Content/header-bg.png); height: 145px;">
+            <div class="container">
+                <div class="one header">
+                    <h1>TechDays Blog</h1>
                 </div>
-            }
+                <div class="one menu">
+                    <a href="/">Home</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Log off", "LogOff", "Account")
+                    }
+                </div>
+            </div>
         </div>
-        <div class="one content">
+    <div class="container">
+        <div class="two-third content">
             @RenderBody()
+        </div>
+
+        <div class="one-third last frame-border1">            <div class="frame-border1-topborder"></div>            <div class="frame-border1-bottomborder"></div>            <div class="frame-border1-content">
+            <h2>Sidebar n shit</h2>
+            mya mye asdadasd<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
         </div>
     </div>
     <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
