@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using System.Linq;
 using MvcTechdaysBlog.Filters;
@@ -26,6 +27,11 @@ namespace MvcTechdaysBlog.Controllers
                 if (regex.IsMatch(content)) return true;
             }
             return false;
+        }
+
+        public JsonResult ValidDateCheck(DateTime date)
+        {
+            throw new NotImplementedException();
         }
     }
 }

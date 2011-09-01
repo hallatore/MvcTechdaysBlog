@@ -26,6 +26,7 @@ namespace MvcTechdaysBlog.Models
 
         [Required]
         [DataType(DataType.Date)]
+        //[Remote("ValidDateCheck", "Validation", ErrorMessage = "Invalid date format")]
         public DateTime Date { get; set; }
 
         public Image Image { get; set; }
@@ -33,9 +34,9 @@ namespace MvcTechdaysBlog.Models
         public virtual ICollection<Comment> Comments { get; set; }
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (Date.Date < DateTime.Now.Date)
+            if (Date.Date < DateTime.Now.AddDays(-7).Date)
             {
-                yield return new ValidationResult("You can't publish yesterday");
+                yield return new ValidationResult("You can't publish last week");
             }
         }
     }

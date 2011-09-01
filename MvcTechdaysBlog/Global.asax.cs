@@ -30,8 +30,7 @@ namespace MvcTechdaysBlog
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
                 new string[] { "MvcTechdaysBlog.Controllers" }
-            );
-
+                );
         }
 
         protected void Application_Start()
