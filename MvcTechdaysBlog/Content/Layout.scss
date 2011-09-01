@@ -54,4 +54,26 @@ h2 {
 
 .frame-border1 {    background-image: url('sidebar-bg.png');    background-repeat: repeat-y;    position: relative;    margin-left: -16px;    padding-left: 16px;}        .frame-border1-topborder {    position: absolute;    top: 0;    background-image: url('Images/frame-border1-topborder.png');    background-repeat: no-repeat;    height: 26px;    width: 26px;    margin-left: -16px;}        .frame-border1-bottomborder {    position: absolute;    bottom: 0;    background-image: url('Images/frame-border1-bottomborder.png');    background-repeat: no-repeat;    height: 26px;    width: 26px;    margin-left: -16px;}.frame-border1-content {    position: relative;    padding-top: 30px;}.editor-label {    margin-top: 5px;
     float: left;
-    width: 130px;}.editor-field {    margin-bottom: 10px;}fieldset {    margin-top: 50px;        input[type="submit"] {        margin-left: 130px;        margin-top: 20px;    }}
+    width: 130px;}.editor-field {    margin-bottom: 10px;}fieldset {    margin-top: 50px;        input[type="submit"] {        margin-left: 130px;        margin-top: 20px;    }}.comment-date {    font-size: 10px;    color: #302403;    border-top: 1px solid gray;    padding-top: 2px;    margin-top: 2px;}.comment-content {    margin-bottom: 20px;    font-size: 12px;}.comment-form-button {    margin-top: 30px;
+    width: 260px;
+    text-align: center;
+}
+
+.comments {
+    margin-top: 30px;
+}
+
+
+.comment-form .field-validation-error {
+    color: red;
+    font-size: 10px;
+}
+
+.comment-form .editor-label {
+    margin-bottom: 5px;
+    float:none;
+}
+
+.comment-form input[type="text"], .comment-form textarea {
+width: 280px;
+}

@@ -1,21 +1,16 @@
-﻿@{
+﻿@model List<MvcTechdaysBlog.Models.Article>
+
+@{
     ViewBag.Title = "Index";
 }
 
-<div class="article">
-    <h2>Blog Title Header</h2>
-    <p>Plutselig var sauen der litt bak den forkrommete fisken, og klipte alle sauene bestemt. Noen kaniner brakk laksen provoserende. En tyranosaurus spillte mobilen hardt under en lilla harddisk. En pyroman snøfreste sjørøveren vagt. Ei sangerinne brakk en alpinist til han hoppet sjokkert ved den langhårete parykken. </p>
-    <a href="#" class="fancy-button" style="margin-top: 10px;">Les mer</a>
-</div>
-
-<div class="article">
-    <h2>Blog Title Header</h2>
-    <p>Sjefssabeltanntigeren stakk kineseren, kamelen og krepsene. Flere nordboerer flakset da rytteren som barberte ei konkubine ristet en skater gjennom tingen. Apekatten felte noen kameler usikkert. Skuespilleren tok med seg atten brannbiler inn til ørnen. Nordboeren lekte monitoren hardt på en urban lyktestolpe. En sabeltanntiger var farlig og dengte en varm russer. Plutselig var vennen der langt foran den kjente stokken, og spant alle brannfyrene sjokkert. Skiskytteren sov fotballen hardt bak en rød bil. Både kaninene og gitaristene dro mafiabossen. Tolv grønne elger møtte 75 hurtige helter. Plutselig så de tjuefem sabeltanntigerer som kom ganske nært planeten. Det ble stille og hobitten viste hvordan den sinnsyke hammerhaien fungerte. Snekkeren spiste en båt. Fem fenrisulver komuniserte en snill videomaskin på 17 dager. Noen skatere barberte ei dronning provoserende. Lydmodulene ankom, mens pilotene ventet gjennom firmabilen. Tjukkasene ansatte mange sauer. De små musikerene gurglet i skjul. Sjefsbergenseren flamberte araberen, bergenseren og aspirantene. Flere doktorer fisket da en superhelt som flamberte en gullfisk spiste en brasilianer gjennom innretningen. Noen egyptere klemte en gitarist til han spillte brutalt gjennom den fryktløse reservøren. </p>
-    <a href="#" class="fancy-button" style="margin-top: 10px;">Les mer</a>
-</div>
-
-<div class="article">
-    <h2>Blog Title Header</h2>
-    <p>Superheltene fisket mange isbjørner. En kjempekamerat ertet parabolen til doktorene. Tjueto kroner måtte ei ku betale. Plutselig var cowboyen der bak den lysegrønne turbinen, og narret alle orkene rett. De så en bueskytter som gravde brutalt ved en skiftenøkkel. Tjuefem grønne cowboyer møtte åtte kraftige amerikanerer. Plutselig var kameraten der ved den råe tankbåten, og spylte alle fenrisulvene latterlig. 359 kroner måtte musa betale. Plutselig så de tjuefem sabeltannkatter som kom litt bak supermanndrakten. En robot snøfreste en sjeik til han hinket rått litt bak den svart matte hekken. Både manetene og fenrisulvene sprayet musikeren. En pyroman traff høvdingen fort. Ei høne jobbet veldig usikkert. Kaninen tok så en svær traktor og kastet den på en giraff. Det ble stille og figuren viste hvordan den lillae sabeltanngiraffen fungerte. De så en gitarist som lyttet hastig gjennom en server.</p>
-    <a href="#" class="fancy-button" style="margin-top: 10px;">Les mer</a>
+<div class="one">
+    @foreach (var article in Model)
+    {
+        <div class="article">
+            <a href="@Url.Action("Article", new { id = article.Url })"><h2>@article.Title</h2></a>
+            <p>@article.Description</p>
+            <a href="@Url.Action("Article", new { id = article.Url })" class="fancy-button" style="margin-top: 10px;">Les mer</a>
+        </div>
+    }
 </div>

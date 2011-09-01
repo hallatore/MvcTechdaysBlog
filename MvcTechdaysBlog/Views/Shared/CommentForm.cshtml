@@ -1,0 +1,58 @@
+﻿@model MvcTechdaysBlog.Models.Comment
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    function onCommentPostSuccess(data) {
+        $(".comments").prepend($(data));
+        cancelCommentForm();
+    }
+
+    $(function () {
+        $(".comment-form-button").click(function () {
+            $(".comment-form").slideDown(function () {
+                $(".comment-form #Name").focus();
+            });
+            $(".comment-form-button").slideUp();
+        });
+
+
+        $(".comment-form-cancel").click(cancelCommentForm);
+    });
+
+    function cancelCommentForm() {
+        $(".comment-form").slideUp();
+        $(".comment-form-button").slideDown();
+        $(".comment-form input[type='text'], .comment-form textarea").val("");
+    }
+</script>
+
+<div class="comment-form" style="display: none;">
+    @using (Ajax.BeginForm("PostComment", "Home", new AjaxOptions { OnSuccess = "onCommentPostSuccess" }))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Content)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Content)
+                @Html.ValidationMessageFor(model => model.Content)
+            </div>
+
+            @Html.HiddenFor(model => model.ArticleId)
+                <input type="submit" value="Post" /> <div class="fancy-button comment-form-cancel">Cancel</div>
+        </fieldset>
+    }
+</div>
+<div class="comment-form-button fancy-button">New comment</div>

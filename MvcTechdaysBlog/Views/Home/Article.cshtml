@@ -1,0 +1,25 @@
+﻿@model MvcTechdaysBlog.Models.Article
+           
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<div class="two-third">
+    <div class="article">
+        <h2>@Model.Title</h2>
+        <p>@Model.Content</p>
+    </div>
+</div>
+
+<div class="one-third last">
+    @if (ViewBag.Comments != null)
+    {
+        @Html.Partial("CommentForm", new MvcTechdaysBlog.Models.Comment { ArticleId = Model.Id })
+        <div class="comments">
+            @foreach (MvcTechdaysBlog.Models.Comment comment in ViewBag.Comments)
+            {
+                @Html.Partial("Comment", comment)
+            }
+        </div>
+    }
+</div>
