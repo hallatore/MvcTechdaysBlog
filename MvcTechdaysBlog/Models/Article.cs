@@ -21,15 +21,11 @@ namespace MvcTechdaysBlog.Models
         public string Content { get; set; }
 
         [Required]
-        [Remote("UniqueUrlCheck", "Article")]
         public string Url { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        //[Remote("ValidDateCheck", "Validation", ErrorMessage = "Invalid date format")]
         public DateTime Date { get; set; }
-
-        public Image Image { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
