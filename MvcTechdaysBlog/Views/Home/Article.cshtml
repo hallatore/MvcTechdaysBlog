@@ -12,9 +12,9 @@
 </div>
 
 <div class="one-third last">
+    @Html.Partial("CommentForm", new MvcTechdaysBlog.Models.Comment { ArticleId = Model.Id })
     @if (ViewBag.Comments != null)
     {
-        @Html.Partial("CommentForm", new MvcTechdaysBlog.Models.Comment { ArticleId = Model.Id })
         <div class="comments">
             @foreach (MvcTechdaysBlog.Models.Comment comment in ViewBag.Comments)
             {
