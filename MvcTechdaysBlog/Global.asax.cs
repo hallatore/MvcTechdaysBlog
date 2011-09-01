@@ -27,19 +27,25 @@ namespace MvcTechdaysBlog
 
 
             routes.MapRoute(
-                "Article", // Route name
+                "OldArticle", // Route name
                 "article/{id}", // URL with parameters
                 new { controller = "Home", action = "Article", id = UrlParameter.Optional }, // Parameter defaults
                 new string[] { "MvcTechdaysBlog.Controllers" }
             );
 
+
+            routes.MapRoute(
+                "Article",
+                "{url}",
+                new { controller = "Article", action = "Details" },
+                new string[] { "MvcTechdaysBlog.Controllers" }
+                );
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
                 new string[] { "MvcTechdaysBlog.Controllers" }
-            );
-
+                );
         }
 
         protected void Application_Start()
