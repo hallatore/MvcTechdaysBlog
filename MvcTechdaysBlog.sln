@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTechdaysBlog", "MvcTechdaysBlog\MvcTechdaysBlog.csproj", "{97AF0305-065A-44AF-993D-13A945AD6D9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDaysErrorLogging", "TechDaysErrorLogging\TechDaysErrorLogging.csproj", "{EBF047FB-B873-45A1-A147-7387E300C96E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{97AF0305-065A-44AF-993D-13A945AD6D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97AF0305-065A-44AF-993D-13A945AD6D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97AF0305-065A-44AF-993D-13A945AD6D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF047FB-B873-45A1-A147-7387E300C96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF047FB-B873-45A1-A147-7387E300C96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF047FB-B873-45A1-A147-7387E300C96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF047FB-B873-45A1-A147-7387E300C96E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

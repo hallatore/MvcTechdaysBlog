@@ -17,7 +17,6 @@ namespace MvcTechdaysBlog
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new TechdaysBlogErrorAttribute());
             filters.Add(new RequireAutheticationAttribute());
         }
 
@@ -25,7 +24,7 @@ namespace MvcTechdaysBlog
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
+            routes.IgnoreRoute("favicon.ico");
 
             routes.MapRoute(
                 "Article",
