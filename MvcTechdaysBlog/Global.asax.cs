@@ -44,6 +44,7 @@ namespace MvcTechdaysBlog
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataService>());
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
