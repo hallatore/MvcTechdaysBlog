@@ -26,20 +26,14 @@ namespace MvcTechdaysBlog
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 
-            routes.MapRoute(
-                "OldArticle", // Route name
-                "article/{id}", // URL with parameters
-                new { controller = "Home", action = "Article", id = UrlParameter.Optional }, // Parameter defaults
-                new string[] { "MvcTechdaysBlog.Controllers" }
-            );
-
 
             routes.MapRoute(
                 "Article",
-                "{url}",
-                new { controller = "Article", action = "Details" },
+                "{id}",
+                new { controller = "Home", action = "Article" },
                 new string[] { "MvcTechdaysBlog.Controllers" }
                 );
+
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
