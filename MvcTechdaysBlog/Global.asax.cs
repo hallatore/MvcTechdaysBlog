@@ -25,6 +25,13 @@ namespace MvcTechdaysBlog
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                "Article",
+                "{url}",
+                new { controller = "Article", action = "Details" },
+                new string[] { "MvcTechdaysBlog.Controllers" }
+                );
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
@@ -36,7 +43,7 @@ namespace MvcTechdaysBlog
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            Database.SetInitializer(new DataServiceInit());
+//            Database.SetInitializer(new DataServiceInit());
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
