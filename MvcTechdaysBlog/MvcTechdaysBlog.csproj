@@ -131,6 +131,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fancy.css">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fancy.scss</DependentUpon>
+    </Content>
     <Content Include="Content\header-bg.png" />
     <Content Include="Content\Images\frame-border1-background.png" />
     <Content Include="Content\Images\frame-border1-bottomborder.png" />
@@ -310,6 +315,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Comment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Fancy.scss">
+      <Generator>ScssGenerator</Generator>
+      <LastGenOutput>Fancy.css</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
