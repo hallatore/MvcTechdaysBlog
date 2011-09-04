@@ -10,13 +10,13 @@ using MvcTechdaysBlog.Helpers;
 
 namespace MvcTechdaysBlog.Areas.Admin.Controllers
 {
-    public class AccountController : Controller
+    public partial class AccountController : Controller
     {
         //
         // GET: /Admin/Account/
 
         [AllowAnonymous]
-        public ActionResult LogOn()
+        public virtual ActionResult LogOn()
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -27,7 +27,7 @@ namespace MvcTechdaysBlog.Areas.Admin.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult LogOn(LogOnViewModel model)
+        public virtual ActionResult LogOn(LogOnViewModel model)
         {
             if (ModelState.IsValid && CheckCredentials(model))
             {
@@ -37,7 +37,7 @@ namespace MvcTechdaysBlog.Areas.Admin.Controllers
             return View(model);
         }
 
-        public ActionResult LogOff()
+        public virtual ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");

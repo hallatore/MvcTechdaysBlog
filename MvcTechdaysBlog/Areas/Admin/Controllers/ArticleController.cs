@@ -104,15 +104,5 @@ namespace MvcTechdaysBlog.Areas.Admin.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-
-        public JsonResult UniqueUrlCheck(string url)
-        {
-            var urlExists = db.Articles.Any(y => y.Url.ToLower() == url.ToLower());
-            if (urlExists)
-            {
-                return Json("URL already exists", JsonRequestBehavior.AllowGet);
-            }
-            return Json(true, JsonRequestBehavior.AllowGet);
-        }
     }
 }

@@ -9,17 +9,17 @@ using MvcTechdaysBlog.Models;
 namespace MvcTechdaysBlog.Controllers
 {
     [AllowAnonymous]
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         private DataService db = new DataService();
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             var articles = db.Articles.OrderBy(a => a.Date).ToList();
             return View(articles);
         }
 
-        public ActionResult Article(string id)
+        public virtual ActionResult Article(string id)
         {
             var article = db.Articles.SingleOrDefault(a => a.Url == id);
 
@@ -33,7 +33,7 @@ namespace MvcTechdaysBlog.Controllers
         }
 
         [HttpPost]
-        public ActionResult PostComment(Comment comment)
+        public virtual ActionResult PostComment(Comment comment)
         {
             if (ModelState.IsValid)
             {

@@ -9,13 +9,13 @@ using MvcTechdaysBlog.Filters;
 namespace MvcTechdaysBlog.Controllers
 {
     [AllowAnonymous]
-    public class ErrorController : Controller
+    public partial class ErrorController : Controller
     {
-        public ActionResult Error1()
+        public virtual ActionResult Error1()
         {
             throw new ArgumentException("hey ho... you have some argument issues!");
         }
-        public ActionResult Error2()
+        public virtual ActionResult Error2()
         {
             throw new ApplicationException("hey ho... you have some serious issues!");
         }

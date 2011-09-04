@@ -12,7 +12,6 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Article</legend>
 
         @Html.HiddenFor(model => model.Id)
 
@@ -57,11 +56,8 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" /> &nbsp; @Html.ActionLink("Cancel", "Index", null, new { @class = "fancy-div" })
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

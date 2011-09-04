@@ -17,6 +17,30 @@ h2 {
     font-size: 20px;
 }
 
+table {    line-height: 1.5em;    font-size: .9em;
+    margin: 20px 0;
+    width: 100%;
+
+	td {
+		padding: 6px 0;
+		border-bottom: 1px dotted #EcEcEc;
+	}
+
+	th {
+		text-align: left;
+		font-weight: normal;
+		font-size: 1.1em;
+	}
+
+	thead {
+		border-bottom: 1px solid #EaEaEa;
+	}
+}
+
+a {
+    text-decoration: none;
+}
+
 .header {
     margin-top: 23px;
     height: 60px;

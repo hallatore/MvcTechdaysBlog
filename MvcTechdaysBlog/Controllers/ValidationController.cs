@@ -7,9 +7,9 @@ using MvcTechdaysBlog.Filters;
 namespace MvcTechdaysBlog.Controllers
 {
     [AllowAnonymous]
-    public class ValidationController : Controller
+    public partial class ValidationController : Controller
     {
-        public JsonResult BadWords(string content)
+        public virtual JsonResult BadWords(string content)
         {
             var badWords = new[] { "java", "oracle", "webforms" };
             if (CheckText(content, badWords))
@@ -29,7 +29,7 @@ namespace MvcTechdaysBlog.Controllers
             return false;
         }
 
-        public JsonResult ValidDateCheck(DateTime date)
+        public virtual JsonResult ValidDateCheck(DateTime date)
         {
             throw new NotImplementedException();
         }

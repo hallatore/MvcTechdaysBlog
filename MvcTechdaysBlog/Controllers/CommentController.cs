@@ -8,15 +8,15 @@ using System.Web.Mvc;
 using MvcTechdaysBlog.Models;
 
 namespace MvcTechdaysBlog.Controllers
-{ 
-    public class CommentController : Controller
+{
+    public partial class CommentController : Controller
     {
         private DataService db = new DataService();
 
         //
         // GET: /Comment/
 
-        public ViewResult Index()
+        public virtual ViewResult Index()
         {
             var comments = db.Comments.Include(c => c.Article);
             return View(comments.ToList());
@@ -25,7 +25,7 @@ namespace MvcTechdaysBlog.Controllers
         //
         // GET: /Comment/Details/5
 
-        public ViewResult Details(int id)
+        public virtual ViewResult Details(int id)
         {
             Comment comment = db.Comments.Find(id);
             return View(comment);
@@ -34,7 +34,7 @@ namespace MvcTechdaysBlog.Controllers
         //
         // GET: /Comment/Create
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             ViewBag.ArticleId = new SelectList(db.Articles, "Id", "Title");
             return View();
@@ -44,7 +44,7 @@ namespace MvcTechdaysBlog.Controllers
         // POST: /Comment/Create
 
         [HttpPost]
-        public ActionResult Create(Comment comment)
+        public virtual ActionResult Create(Comment comment)
         {
             if (ModelState.IsValid)
             {
@@ -59,8 +59,8 @@ namespace MvcTechdaysBlog.Controllers
         
         //
         // GET: /Comment/Edit/5
- 
-        public ActionResult Edit(int id)
+
+        public virtual ActionResult Edit(int id)
         {
             Comment comment = db.Comments.Find(id);
             ViewBag.ArticleId = new SelectList(db.Articles, "Id", "Title", comment.ArticleId);
@@ -71,7 +71,7 @@ namespace MvcTechdaysBlog.Controllers
         // POST: /Comment/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Comment comment)
+        public virtual ActionResult Edit(Comment comment)
         {
             if (ModelState.IsValid)
             {
@@ -85,8 +85,8 @@ namespace MvcTechdaysBlog.Controllers
 
         //
         // GET: /Comment/Delete/5
- 
-        public ActionResult Delete(int id)
+
+        public virtual ActionResult Delete(int id)
         {
             Comment comment = db.Comments.Find(id);
             return View(comment);
@@ -96,7 +96,7 @@ namespace MvcTechdaysBlog.Controllers
         // POST: /Comment/Delete/5
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public virtual ActionResult DeleteConfirmed(int id)
         {            
             Comment comment = db.Comments.Find(id);
             db.Comments.Remove(comment);

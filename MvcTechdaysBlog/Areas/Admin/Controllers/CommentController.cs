@@ -9,19 +9,19 @@ using System.Web.Mvc;
 using MvcTechdaysBlog.Models;
 
 namespace MvcTechdaysBlog.Areas.Admin.Controllers
-{ 
-    public class CommentController : Controller
+{
+    public partial class CommentController : Controller
     {
         private DataService db = new DataService();
 
-        public ViewResult Index()
+        public virtual ViewResult Index()
         {
             var comments = db.Comments.Include(c => c.Article);
             return View(comments.ToList());
         }
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public virtual ActionResult DeleteConfirmed(int id)
         {            
             Comment comment = db.Comments.Find(id);
             db.Comments.Remove(comment);
