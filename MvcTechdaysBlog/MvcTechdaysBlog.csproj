@@ -115,7 +115,6 @@
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommentController.cs" />
     <Compile Include="Areas\Admin\Models\LogOnViewModel.cs" />
-    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValidationController.cs" />
@@ -287,21 +286,6 @@
     <Content Include="Views\Home\Article.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Comment\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Comment\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Comment\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Comment\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Comment\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\CommentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -330,6 +314,8 @@
       <Generator>ScssGenerator</Generator>
       <LastGenOutput>Fancy.css</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
