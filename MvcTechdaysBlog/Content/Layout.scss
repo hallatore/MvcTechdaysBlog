@@ -101,3 +101,8 @@ a {
 .comment-form input[type="text"], .comment-form textarea {
 width: 280px;
 }
+
+.field-validation-error {
+    font-size: 12px;
+    color: red;
+}
